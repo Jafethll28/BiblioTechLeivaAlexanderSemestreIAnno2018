@@ -8,7 +8,21 @@ package Students;
 /**
  *
  * @author Monserrath
+ * 
  */
+
+
 public class Student {
+    String studentId;
+    String name;
+    String career;
+    float fine;
+    
+    
+    
+    public void addStudent(){
+        //Método de registrar estudiante
+        
+    }
     
 }
