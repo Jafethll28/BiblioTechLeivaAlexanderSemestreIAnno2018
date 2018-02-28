@@ -13,14 +13,14 @@ import java.util.Map;
  *
  * @author Jafeth Leiva
  */
+public class Materials2 {
     
-public class Materials {
     String materialsId;
     String name;
     int quantity;
     String kind;
     int index;
-    //bhbi
+    
     //creación de Mapa de Hash y Array para almacenar datos
     static ArrayList<String> data = new ArrayList<>();
     Map Materials = new HashMap();
