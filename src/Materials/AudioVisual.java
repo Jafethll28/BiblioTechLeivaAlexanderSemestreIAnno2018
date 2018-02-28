@@ -9,6 +9,6 @@ package Materials;
  *
  * @author Jafeth Leiva
  */
-public class AudioVisual extends Materials{
+public class AudioVisual extends Materials2{
     
 }

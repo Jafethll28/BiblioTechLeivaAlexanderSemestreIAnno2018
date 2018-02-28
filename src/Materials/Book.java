@@ -9,7 +9,7 @@ package Materials;
  *
  * @author Jafeth Leiva
  */
-public class Book extends Materials{
+public class Book extends Materials2{
     int year;
     String editorial;
     String author;
