@@ -25,6 +25,8 @@ public class Materials2 {
     //creación de Mapa de Hash y Array para almacenar datos
     static ArrayList<String> data = new ArrayList<>();
     Map Materials = new HashMap();
+    static ArrayList<String> materialsOnLoan = new ArrayList<>();
+    Map MaterialsLoan = new HashMap();
     
     public void addMaterials(){
         //método registrar materiales
@@ -39,11 +41,11 @@ public class Materials2 {
     
     
     public void loan(){
-        String x = "hola";
+        /*String x = "hola";
         Student student = new Student();
         if(student.validateId(x)==true){
             
-        }
+        }*/
         
         
     }
