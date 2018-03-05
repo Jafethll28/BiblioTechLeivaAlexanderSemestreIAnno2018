@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package bibliotechleivaalexandersemestreianno2018;
+import UserImterface.MainFrame;
 
 /**
  *
@@ -16,6 +17,9 @@ public class BiblioTechLeivaAlexanderSemestreIAnno2018 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        MainFrame mf = new MainFrame();
+        mf.setVisible(true);
+        
     }
     
 }

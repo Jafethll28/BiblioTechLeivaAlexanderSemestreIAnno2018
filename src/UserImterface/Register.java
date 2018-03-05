@@ -5,6 +5,9 @@
  */
 package UserImterface;
 
+import Students.Student;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Monserrath
@@ -18,12 +21,6 @@ public class Register extends javax.swing.JPanel {
         initComponents();
     }
     
-    protected void checkID (String iD, String career){
-        if(iD.length() >= 5 && iD.charAt(0) == career.charAt(0)){
-            
-        }
-        
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -500,10 +497,27 @@ public class Register extends javax.swing.JPanel {
         String sID = txt_register_studenID.getText();
         String sName = txt_register_studentName.getText();
         String sCareer = txt_register_carrer.getText();
-        
-        
+        /*
+        if (checkID(sID, sCareer) == true){
+            Student student = new Student(sID, sName, sCareer);
+            student.addStudent();
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Esta mamando");
+        }
+        */
     }//GEN-LAST:event_btn_register_registerActionPerformed
 
+    /**
+    protected boolean checkID (String iD, String career){
+        if(iD.length() >= 5 && iD.charAt(0) == career.charAt(0)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    * */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_register_audioBack;

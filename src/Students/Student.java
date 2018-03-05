@@ -25,6 +25,13 @@ public class Student {
     //Creacion de array y mapa de Hash para almacenar datos
     static ArrayList<String> data = new ArrayList<>();
     Map Students = new HashMap();
+
+    public Student(String studentId, String name, String career) {
+        this.studentId = studentId;
+        this.name = name;
+        this.career = career;
+        this.fine = 0;
+    }
     
     
     public void addStudent(){
