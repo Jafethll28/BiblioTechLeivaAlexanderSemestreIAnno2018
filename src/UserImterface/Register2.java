@@ -10,18 +10,25 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Monserrath
+ * @author Jafeth Leiva
  */
-public class Register extends javax.swing.JPanel {
+public class Register2 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Register
+     * Creates new form Register2
      */
-    public Register() {
+    public Register2() {
         initComponents();
     }
-    
 
+    protected boolean checkID (String iD, String career){
+        if(iD.length() >= 5 && iD.charAt(0) == career.charAt(0)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,9 +38,6 @@ public class Register extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -74,29 +78,7 @@ public class Register extends javax.swing.JPanel {
         btn_register_register = new javax.swing.JButton();
         btn_register_back = new javax.swing.JButton();
 
-        jButton1.setText("jButton1");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTabbedPane1.setName("tab"); // NOI18N
 
@@ -162,6 +144,11 @@ public class Register extends javax.swing.JPanel {
 
         btn_register_bookRegister.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         btn_register_bookRegister.setText("Register");
+        btn_register_bookRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_register_bookRegisterActionPerformed(evt);
+            }
+        });
 
         btn_register_bookBack.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         btn_register_bookBack.setText("Back");
@@ -231,7 +218,7 @@ public class Register extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txt_register_bookQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_register_bookBack)
                 .addContainerGap())
         );
@@ -314,12 +301,12 @@ public class Register extends javax.swing.JPanel {
                             .addComponent(txt_register_audioCode, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_register_audioName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_register_audioQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(63, 63, 63)
                     .addComponent(jLabel14)
-                    .addContainerGap(378, Short.MAX_VALUE)))
+                    .addContainerGap(349, Short.MAX_VALUE)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,14 +327,14 @@ public class Register extends javax.swing.JPanel {
                     .addComponent(jLabel13))
                 .addGap(29, 29, 29)
                 .addComponent(btn_register_audioRegister)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(btn_register_audioBack)
                 .addContainerGap())
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(132, 132, 132)
                     .addComponent(jLabel14)
-                    .addContainerGap(168, Short.MAX_VALUE)))
+                    .addContainerGap(152, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Audovisuals", jPanel6);
@@ -356,11 +343,11 @@ public class Register extends javax.swing.JPanel {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
         );
 
         jTabbedPane4.addTab("Materials", jPanel5);
@@ -413,7 +400,7 @@ public class Register extends javax.swing.JPanel {
                             .addComponent(txt_register_studenID))
                         .addGap(47, 47, 47)
                         .addComponent(btn_register_register)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,21 +422,23 @@ public class Register extends javax.swing.JPanel {
                     .addComponent(txt_register_carrer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(btn_register_back)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Students", jPanel2);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane4)
+            .addComponent(jTabbedPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane4)
+            .addComponent(jTabbedPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_register_bookCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_register_bookCodeActionPerformed
@@ -476,6 +465,10 @@ public class Register extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_register_bookQuantityActionPerformed
 
+    private void btn_register_bookRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_bookRegisterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_register_bookRegisterActionPerformed
+
     private void txt_register_audioCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_register_audioCodeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_register_audioCodeActionPerformed
@@ -497,27 +490,55 @@ public class Register extends javax.swing.JPanel {
         String sID = txt_register_studenID.getText();
         String sName = txt_register_studentName.getText();
         String sCareer = txt_register_carrer.getText();
-        /*
         if (checkID(sID, sCareer) == true){
             Student student = new Student(sID, sName, sCareer);
-            student.addStudent();
+            if(student.validateId(sID)==false){
+                student.addStudent();
+                JOptionPane.showMessageDialog(this, "Esta no mamando");
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Ya está");
+            }
         }
         else{
             JOptionPane.showMessageDialog(this, "Esta mamando");
         }
-        */
     }//GEN-LAST:event_btn_register_registerActionPerformed
 
     /**
-    protected boolean checkID (String iD, String career){
-        if(iD.length() >= 5 && iD.charAt(0) == career.charAt(0)){
-            return true;
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Register2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Register2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Register2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Register2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        else{
-            return false;
-        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Register2().setVisible(true);
+            }
+        });
     }
-    * */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_register_audioBack;
@@ -526,7 +547,6 @@ public class Register extends javax.swing.JPanel {
     private javax.swing.JButton btn_register_bookBack;
     private javax.swing.JButton btn_register_bookRegister;
     private javax.swing.JButton btn_register_register;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -543,8 +563,6 @@ public class Register extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTabbedPane jTabbedPane1;

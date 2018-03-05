@@ -24,7 +24,7 @@ public class Student {
     
     //Creacion de array y mapa de Hash para almacenar datos
     static ArrayList<String> data = new ArrayList<>();
-    Map Students = new HashMap();
+    Map<String,ArrayList> Students = new HashMap();
 
     public Student(String studentId, String name, String career) {
         this.studentId = studentId;
@@ -99,15 +99,12 @@ public class Student {
     
     public boolean validateId(String Id){
         //Método para validar que un estudiante este registrado
-        for (Object key : Students.keySet()){
-            if(studentId == key){
+        for(String id : Students.keySet()){
+            System.out.println(id + studentId);
+            if(studentId.equals(id)){
                 return true;
             }
         }
         return false;
-    }
-    
-    
-    
-    
+        }
 }
