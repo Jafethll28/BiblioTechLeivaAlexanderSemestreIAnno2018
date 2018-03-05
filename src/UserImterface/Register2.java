@@ -492,8 +492,9 @@ public class Register2 extends javax.swing.JFrame {
         String sCareer = txt_register_carrer.getText();
         if (checkID(sID, sCareer) == true){
             Student student = new Student(sID, sName, sCareer);
-            if(student.validateId(sID)==false){
-                student.addStudent();
+            student.addStudent();
+            if(student.validateId(sID)== false){
+                //student.addStudent();
                 JOptionPane.showMessageDialog(this, "Esta no mamando");
             }
             else{

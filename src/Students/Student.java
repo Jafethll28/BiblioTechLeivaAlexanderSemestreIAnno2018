@@ -23,8 +23,8 @@ public class Student {
     //int index;
     
     //Creacion de array y mapa de Hash para almacenar datos
-    static ArrayList<String> data = new ArrayList<>();
-    Map<String,ArrayList> Students = new HashMap();
+    
+    static Map<String,ArrayList> hashStudents = new HashMap();
 
     public Student(String studentId, String name, String career) {
         this.studentId = studentId;
@@ -36,11 +36,12 @@ public class Student {
     
     public void addStudent(){
         //Método de registrar estudiante
+        ArrayList<String> data = new ArrayList<>();
         data.add(name);
         data.add(career);
         String fine2 = Float.toString(fine);
         data.add(fine2);
-        Students.put(studentId,data);
+        hashStudents.put(studentId,data);
         
     }
 
@@ -60,12 +61,8 @@ public class Student {
         this.fine = fine;
     }
 
-    public static void setData(ArrayList<String> data) {
-        Student.data = data;
-    }
-
     public void setStudents(Map Students) {
-        this.Students = Students;
+        this.hashStudents = Students;
     }
 
     public String getStudentId() {
@@ -84,12 +81,8 @@ public class Student {
         return fine;
     }
 
-    public static ArrayList<String> getData() {
-        return data;
-    }
-
     public Map getStudents() {
-        return Students;
+        return hashStudents;
     }
     
     
@@ -99,12 +92,12 @@ public class Student {
     
     public boolean validateId(String Id){
         //Método para validar que un estudiante este registrado
-        for(String id : Students.keySet()){
-            System.out.println(id + studentId);
-            if(studentId.equals(id)){
-                return true;
-            }
+        for (Map.Entry<String, ArrayList> entry : hashStudents.entrySet()) {
+            System.out.println(hashStudents.size());
+            System.out.println("clave=" + entry.getKey() + ", valor=" + entry.getValue());
+            return true;
         }
         return false;
-        }
+    }
 }
+    
