@@ -20,13 +20,9 @@ public class Student {
     String name;
     String career;
     float fine;
-    int index;
-    /*
-    static ArrayList<String> studentsId = new ArrayList<>();
-    static ArrayList<String> names = new ArrayList<>();
-    static ArrayList<String> careers = new ArrayList<>();
-    static ArrayList<Float> fines = new ArrayList<>();
-     */
+    //int index;
+    
+    //Creacion de array y mapa de Hash para almacenar datos
     static ArrayList<String> data = new ArrayList<>();
     Map Students = new HashMap();
     
@@ -40,5 +36,22 @@ public class Student {
         Students.put(studentId,data);
         
     }
+    
+    public String getId(){
+        return studentId;
+    }
+    
+    public boolean validateId(String Id){
+        //Método para validar que un estudiante este registrado
+        for (Object key : Students.keySet()){
+            if(studentId == key){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    
+    
     
 }

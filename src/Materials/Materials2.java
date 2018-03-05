@@ -5,6 +5,7 @@
  */
 package Materials;
 
+import Students.Student;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +15,7 @@ import java.util.Map;
  * @author Jafeth Leiva
  */
 public class Materials2 {
-    
+    //Atributos
     String materialsId;
     String name;
     int quantity;
@@ -36,4 +37,14 @@ public class Materials2 {
         //index++;
     }
     
+    
+    public void loan(){
+        String x = "hola";
+        Student student = new Student();
+        if(student.validateId(x)==true){
+            
+        }
+        
+        
+    }
 }
