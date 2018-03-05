@@ -17,6 +17,13 @@ public class Register extends javax.swing.JPanel {
     public Register() {
         initComponents();
     }
+    
+    protected void checkID (String iD, String career){
+        if(iD.length() >= 5 && iD.charAt(0) == career.charAt(0)){
+            
+        }
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -374,18 +381,8 @@ public class Register extends javax.swing.JPanel {
         jLabel4.setText("Student Name:");
 
         txt_register_studenID.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
-        txt_register_studenID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_register_studenIDActionPerformed(evt);
-            }
-        });
 
         txt_register_studentName.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        txt_register_studentName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_register_studentNameActionPerformed(evt);
-            }
-        });
 
         btn_register_register.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
         btn_register_register.setText("Register");
@@ -458,18 +455,6 @@ public class Register extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_register_studenIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_register_studenIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_register_studenIDActionPerformed
-
-    private void txt_register_studentNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_register_studentNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_register_studentNameActionPerformed
-
-    private void btn_register_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_registerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_register_registerActionPerformed
-
     private void txt_register_bookCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_register_bookCodeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_register_bookCodeActionPerformed
@@ -509,6 +494,15 @@ public class Register extends javax.swing.JPanel {
     private void txt_register_audioTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_register_audioTypeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_register_audioTypeActionPerformed
+
+    private void btn_register_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_registerActionPerformed
+        // TODO add your handling code here:
+        String sID = txt_register_studenID.getText();
+        String sName = txt_register_studentName.getText();
+        String sCareer = txt_register_carrer.getText();
+        
+        
+    }//GEN-LAST:event_btn_register_registerActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -36,6 +36,55 @@ public class Student {
         Students.put(studentId,data);
         
     }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCareer(String career) {
+        this.career = career;
+    }
+
+    public void setFine(float fine) {
+        this.fine = fine;
+    }
+
+    public static void setData(ArrayList<String> data) {
+        Student.data = data;
+    }
+
+    public void setStudents(Map Students) {
+        this.Students = Students;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCareer() {
+        return career;
+    }
+
+    public float getFine() {
+        return fine;
+    }
+
+    public static ArrayList<String> getData() {
+        return data;
+    }
+
+    public Map getStudents() {
+        return Students;
+    }
+    
     
     public String getId(){
         return studentId;
