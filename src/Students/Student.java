@@ -92,12 +92,21 @@ public class Student {
     
     public boolean validateId(String Id){
         //Método para validar que un estudiante este registrado
+        hashStudents.entrySet().forEach((entry) -> {
+            String key = entry.getKey();
+            System.out.println(key);
+            //String value = entry.getValue();
+        });
+        System.out.println("\n");
+        return hashStudents.containsKey(Id);
+    }
+}
+    
+/**
         for (Map.Entry<String, ArrayList> entry : hashStudents.entrySet()) {
             System.out.println(hashStudents.size());
             System.out.println("clave=" + entry.getKey() + ", valor=" + entry.getValue());
             return true;
         }
         return false;
-    }
-}
-    
+        * */

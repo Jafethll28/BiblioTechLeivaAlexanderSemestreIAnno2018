@@ -490,20 +490,25 @@ public class Register2 extends javax.swing.JFrame {
         String sID = txt_register_studenID.getText();
         String sName = txt_register_studentName.getText();
         String sCareer = txt_register_carrer.getText();
-        if (checkID(sID, sCareer) == true){
-            Student student = new Student(sID, sName, sCareer);
-            student.addStudent();
-            if(student.validateId(sID)== false){
-                //student.addStudent();
-                JOptionPane.showMessageDialog(this, "Esta no mamando");
-            }
-            else{
-                JOptionPane.showMessageDialog(this, "Ya está");
-            }
+        if (sID.equals("") || sName.equals("") || sCareer.equals("")){
+            JOptionPane.showMessageDialog(this, "One of the fields is empty, fill it to procced");
+            
         }
         else{
-            JOptionPane.showMessageDialog(this, "Esta mamando");
-        }
+            if (checkID(sID, sCareer) == true){
+                Student student = new Student(sID, sName, sCareer);
+                if(student.validateId(sID)== false){
+                    student.addStudent();
+                    JOptionPane.showMessageDialog(this, "The registration have been a success");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "The ID is alredy registered" );
+                }
+            }
+            else{
+            JOptionPane.showMessageDialog(this, "The Student ID is wrong");
+            }
+        }   
     }//GEN-LAST:event_btn_register_registerActionPerformed
 
     /**
