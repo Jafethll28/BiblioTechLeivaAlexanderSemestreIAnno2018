@@ -150,7 +150,7 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         Lend lend = new Lend();
         lend.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_lend_btActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

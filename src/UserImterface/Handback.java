@@ -8,6 +8,7 @@ package UserImterface;
 import Materials.Materials2;
 import static Materials.Materials2.MaterialsLoan;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +26,7 @@ public class Handback extends javax.swing.JFrame {
     public ArrayList handBack(String idS){
         ArrayList fillComboB = new ArrayList();
         fillComboB = MaterialsLoan.get(idS);
-        System.out.println(fillComboB.get(0));
+        System.out.println(fillComboB.get(1));
         return fillComboB;
     }
     
@@ -44,11 +45,10 @@ public class Handback extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         txt_handback_studentID = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        txt_handback_studentID1 = new javax.swing.JTextField();
+        txt_handback_studenFee = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txt_handback_studentID2 = new javax.swing.JTextField();
+        txt_handback_studentPD = new javax.swing.JTextField();
         btn_handback_returnBook = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         btn_handback_return = new javax.swing.JButton();
@@ -66,30 +66,33 @@ public class Handback extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
-
         jLabel2.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         jLabel2.setText("Fee:");
 
-        txt_handback_studentID1.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 1, 14)); // NOI18N
-        txt_handback_studentID1.addActionListener(new java.awt.event.ActionListener() {
+        txt_handback_studenFee.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 1, 14)); // NOI18N
+        txt_handback_studenFee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_handback_studentID1ActionPerformed(evt);
+                txt_handback_studenFeeActionPerformed(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         jLabel3.setText("Days Past Due:");
 
-        txt_handback_studentID2.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 1, 14)); // NOI18N
-        txt_handback_studentID2.addActionListener(new java.awt.event.ActionListener() {
+        txt_handback_studentPD.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 1, 14)); // NOI18N
+        txt_handback_studentPD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_handback_studentID2ActionPerformed(evt);
+                txt_handback_studentPDActionPerformed(evt);
             }
         });
 
         btn_handback_returnBook.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btn_handback_returnBook.setText("Return Book");
+        btn_handback_returnBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_handback_returnBookActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         jLabel4.setText("Handback Item");
@@ -114,36 +117,31 @@ public class Handback extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txt_handback_studentID, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_handback_searchStudent))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_handback_studentID2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(139, 139, 139))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_handback_returnBook)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(txt_handback_studentID1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_handback_return)
-                    .addComponent(jLabel4)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_handback_studentID, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_handback_searchStudent))
+                    .addComponent(jLabel4)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_handback_studenFee, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btn_handback_returnBook))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_handback_studentPD, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,20 +154,17 @@ public class Handback extends javax.swing.JFrame {
                     .addComponent(txt_handback_studentID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_handback_searchStudent))
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txt_handback_studentID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                    .addComponent(txt_handback_studentPD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txt_handback_studentID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(btn_handback_returnBook)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                    .addComponent(txt_handback_studenFee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_handback_returnBook))
+                .addGap(44, 44, 44)
                 .addComponent(btn_handback_return)
-                .addContainerGap())
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -179,26 +174,26 @@ public class Handback extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_handback_studentIDActionPerformed
 
-    private void txt_handback_studentID1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_handback_studentID1ActionPerformed
+    private void txt_handback_studenFeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_handback_studenFeeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_handback_studentID1ActionPerformed
+    }//GEN-LAST:event_txt_handback_studenFeeActionPerformed
 
-    private void txt_handback_studentID2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_handback_studentID2ActionPerformed
+    private void txt_handback_studentPDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_handback_studentPDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_handback_studentID2ActionPerformed
+    }//GEN-LAST:event_txt_handback_studentPDActionPerformed
 
     private void btn_handback_searchStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_handback_searchStudentActionPerformed
         // TODO add your handling code here:
-        
         String idS = txt_handback_studentID.getText();
-        if(checkExistance(idS) == true){
-            ArrayList populate = new ArrayList();
-            populate = handBack(idS);
-            for (int i = 0; i > populate.size(); i++ ){
-                jComboBox1.addItem("Holi");
-            }
+        if(checkExistance(idS) == false || idS.equals("")){
+            JOptionPane.showMessageDialog(this, "The Student ID is wrong");
+            txt_handback_studenFee.setEnabled(false);
+            txt_handback_studentPD.setEditable(false);
         }
-        
+        else{
+            txt_handback_studenFee.setEnabled(true);
+            txt_handback_studentPD.setEditable(true);
+        }
     }//GEN-LAST:event_btn_handback_searchStudentActionPerformed
 
     private void btn_handback_returnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_handback_returnActionPerformed
@@ -208,6 +203,21 @@ public class Handback extends javax.swing.JFrame {
         mf.setVisible(true);
     }//GEN-LAST:event_btn_handback_returnActionPerformed
 
+    private void btn_handback_returnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_handback_returnBookActionPerformed
+        ArrayList temp = new ArrayList(handBack(txt_handback_studentID.getText()));
+        int lendDays = Integer.parseInt((String) temp.get(1));
+        if (txt_handback_studentPD.equals("") == false){
+            int multi = (Integer.parseInt(txt_handback_studentPD.getText())- lendDays) * 300;
+            txt_handback_studenFee.setText(Integer.toString(multi));
+            MaterialsLoan.remove(txt_handback_studentID.getText());
+            JOptionPane.showMessageDialog(this, "The item have been returned");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "There is an empty space");
+        }
+    }//GEN-LAST:event_btn_handback_returnBookActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -247,13 +257,12 @@ public class Handback extends javax.swing.JFrame {
     private javax.swing.JButton btn_handback_return;
     private javax.swing.JButton btn_handback_returnBook;
     private javax.swing.JButton btn_handback_searchStudent;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField txt_handback_studenFee;
     private javax.swing.JTextField txt_handback_studentID;
-    private javax.swing.JTextField txt_handback_studentID1;
-    private javax.swing.JTextField txt_handback_studentID2;
+    private javax.swing.JTextField txt_handback_studentPD;
     // End of variables declaration//GEN-END:variables
 }
