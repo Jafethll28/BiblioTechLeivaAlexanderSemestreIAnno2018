@@ -20,7 +20,6 @@ public class Materials2 {
     String name;
     int quantity;
     String kind;
-    int index;
 
     public void setMaterialsId(String materialsId) {
         this.materialsId = materialsId;
@@ -36,14 +35,6 @@ public class Materials2 {
 
     public void setKind(String kind) {
         this.kind = kind;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
-    public static void setData(ArrayList<String> data) {
-        Materials2.data = data;
     }
 
     public void setMaterials(Map Materials) {
@@ -74,14 +65,6 @@ public class Materials2 {
         return kind;
     }
 
-    public int getIndex() {
-        return index;
-    }
-
-    public static ArrayList<String> getData() {
-        return data;
-    }
-
     public Map getMaterials() {
         return Materials;
     }
@@ -95,21 +78,29 @@ public class Materials2 {
     }
     
     //creación de Mapa de Hash y Array para almacenar datos
-    static ArrayList<String> data = new ArrayList<>();
-    Map Materials = new HashMap();
+    static Map Materials = new HashMap();
     static ArrayList<String> materialsOnLoan = new ArrayList<>();
     Map MaterialsLoan = new HashMap();
     
     public void addMaterials(){
         //método registrar materiales
+        /*
+        ArrayList<String> data = new ArrayList<>();
         data.add(materialsId);
         data.add(name);
         String quantity2 = Integer.toString(quantity);
         data.add(quantity2);
         data.add(kind);
-        Materials.put(materialsId,data);
-        //index++;
+        Materials.put(materialsId,data);*/
     }
+    
+    public Materials2(String materialsId, String name, int quantity, String kind) {
+        this.materialsId = materialsId;
+        this.name = name;
+        this.quantity = quantity;
+        this.kind = kind;
+    }
+    
     
     
     public void loan(){
@@ -117,8 +108,11 @@ public class Materials2 {
         Student student = new Student();
         if(student.validateId(x)==true){
             
-        }*/
-        
-        
+        }*/  
     }
+    
+    public void printear(){
+        System.out.println(name + materialsId);
+    }
+    
 }

@@ -5,6 +5,9 @@
  */
 package UserImterface;
 
+import Materials.AudioVisual;
+import Materials.Book;
+import Materials.Materials2;
 import Students.Student;
 import javax.swing.JOptionPane;
 
@@ -255,6 +258,11 @@ public class Register2 extends javax.swing.JFrame {
 
         btn_register_audioRegister.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         btn_register_audioRegister.setText("Register");
+        btn_register_audioRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_register_audioRegisterActionPerformed(evt);
+            }
+        });
 
         btn_register_audioBack.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         btn_register_audioBack.setText("Back");
@@ -343,11 +351,11 @@ public class Register2 extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jTabbedPane4.addTab("Materials", jPanel5);
@@ -431,11 +439,11 @@ public class Register2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
+            .addComponent(jTabbedPane4)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
+            .addComponent(jTabbedPane4)
         );
 
         pack();
@@ -467,6 +475,23 @@ public class Register2 extends javax.swing.JFrame {
 
     private void btn_register_bookRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_bookRegisterActionPerformed
         // TODO add your handling code here:
+        String code = txt_register_bookCode.getText();
+        String name = txt_register_bookName.getText();
+        String editorial = txt_register_bookEditorial.getText();
+        String autor = txt_register_bookAutor.getText();
+        String kind = txt_register_bookType.getText();
+        int quantity = Integer.parseInt(txt_register_bookQuantity.getText());
+        
+        if(code.equals("") || name.equals("") || editorial.equals("") || autor.equals("") || kind.equals("")){
+            JOptionPane.showMessageDialog(this, "One of the fields is empty, fill it to procced");
+        }  
+        else{
+            Materials2 materials = new Materials2(code,name,quantity,kind);
+            Book book = new Book(editorial,autor,code,name,quantity,kind);
+            book.addBook();
+            materials.printear();
+            JOptionPane.showMessageDialog(this, "The registration have been a success");
+        }
     }//GEN-LAST:event_btn_register_bookRegisterActionPerformed
 
     private void txt_register_audioCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_register_audioCodeActionPerformed
@@ -493,7 +518,7 @@ public class Register2 extends javax.swing.JFrame {
         if (sID.equals("") || sName.equals("") || sCareer.equals("")){
             JOptionPane.showMessageDialog(this, "One of the fields is empty, fill it to procced");
             
-        }
+         }
         else{
             if (checkID(sID, sCareer) == true){
                 Student student = new Student(sID, sName, sCareer);
@@ -510,6 +535,24 @@ public class Register2 extends javax.swing.JFrame {
             }
         }   
     }//GEN-LAST:event_btn_register_registerActionPerformed
+
+    private void btn_register_audioRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_audioRegisterActionPerformed
+        // TODO add your handling code here:
+        String code = txt_register_audioCode.getText();
+        String name = txt_register_audioName.getText();
+        String type = txt_register_audioType.getText();
+        int quantity = Integer.parseInt(txt_register_audioQuantity.getText());
+        
+        if(code.equals("") || name.equals("") || type.equals("")){
+            JOptionPane.showMessageDialog(this, "One of the fields is empty, fill it to procced");
+        }
+        else{
+            Materials2 materials = new Materials2(code,name,quantity,type);
+            AudioVisual audiovisual = new AudioVisual(code,name,quantity,type);
+            audiovisual.addAudio();
+            JOptionPane.showMessageDialog(this, "The registration have been a success");
+        }
+    }//GEN-LAST:event_btn_register_audioRegisterActionPerformed
 
     /**
      * @param args the command line arguments
