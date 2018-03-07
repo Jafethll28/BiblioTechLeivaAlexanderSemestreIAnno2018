@@ -32,7 +32,7 @@ public class Student {
         this.career = career;
         this.fine = 0;
     }
-    
+
     
     public void addStudent(){
         //Método de registrar estudiante

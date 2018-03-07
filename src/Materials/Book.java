@@ -20,19 +20,21 @@ public class Book extends Materials2{
         this.editorial = editorial;
         this.author = author;
     }
+
     
     public void addBook(){
         //método registrar libros
         ArrayList<String> data = new ArrayList<>();
-        data.add(name);
+        data.add(materialsId);
         String quantity2 = Integer.toString(quantity);
         data.add(quantity2);
         data.add(kind);
         data.add(editorial);
         data.add(author);
-        Materials.put(materialsId,data);
+        Materials.put(name,data);
     }
     
+    //prueba de datos
     public void printear(){
         System.out.println(editorial + name + materialsId);
     }

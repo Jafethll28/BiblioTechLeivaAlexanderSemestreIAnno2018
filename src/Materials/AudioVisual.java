@@ -14,20 +14,31 @@ import java.util.ArrayList;
  */
 public class AudioVisual extends Materials2{
     
+    static ArrayList<String> names = new ArrayList<>();
+    
     public AudioVisual(String materialsId, String name, int quantity, String kind) {
         super(materialsId, name, quantity, kind);
     }
-    
+
     public void addAudio(){
-        //método registrar libros
+        //método registrar materiales audioVisuales
         ArrayList<String> data = new ArrayList<>();
-        data.add(name);
+        names.add(name);
+        data.add(materialsId);
         String quantity2 = Integer.toString(quantity);
         data.add(quantity2);
         data.add(kind);
-        Materials.put(materialsId,data);
+        Materials.put(name,data);
     }
-    
+
+    public static ArrayList<String> getNames() {
+        return names;
+    }
+
+    public static void setNames(ArrayList<String> names) {
+        AudioVisual.names = names;
+    }
+     //prueba de datos
     public void printear(){
         System.out.println(name + materialsId);
     }
