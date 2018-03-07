@@ -6,7 +6,9 @@
 package UserImterface;
 
 import Materials.Materials2;
+import Students.Student;
 import static Materials.Materials2.MaterialsLoan;
+import static Students.Student.hashStudents;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -207,9 +209,15 @@ public class Handback extends javax.swing.JFrame {
         ArrayList temp = new ArrayList(handBack(txt_handback_studentID.getText()));
         int lendDays = Integer.parseInt((String) temp.get(1));
         if (txt_handback_studentPD.equals("") == false){
-            int multi = (Integer.parseInt(txt_handback_studentPD.getText())- lendDays) * 300;
+            int multi = (Integer.parseInt(txt_handback_studentPD.getText())) * 300;
             txt_handback_studenFee.setText(Integer.toString(multi));
             MaterialsLoan.remove(txt_handback_studentID.getText());
+            temp = hashStudents.get(txt_handback_studentID.getText());
+            temp.set(2, multi);
+            hashStudents.put(txt_handback_studentID.getText(), temp);
+            txt_handback_studentPD.setText("");
+            txt_handback_studentID.setText("");
+            txt_handback_studenFee.setText("");
             JOptionPane.showMessageDialog(this, "The item have been returned");
         }
         else{
@@ -217,7 +225,6 @@ public class Handback extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_handback_returnBookActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */

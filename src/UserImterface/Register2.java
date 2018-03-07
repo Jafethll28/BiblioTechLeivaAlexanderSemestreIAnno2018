@@ -517,6 +517,12 @@ public class Register2 extends javax.swing.JFrame {
                 book.addBook();
                 materials.printear();
                 JOptionPane.showMessageDialog(this, "The registration have been a success");
+                txt_register_bookCode.setText("");
+                txt_register_bookName.setText("");
+                txt_register_bookEditorial.setText("");
+                txt_register_bookAutor.setText("");
+                txt_register_bookType.setText("");
+                txt_register_bookQuantity.setText("");
                 }
             else{
                 JOptionPane.showMessageDialog(this, "The code length if wrong, please fix it");
@@ -554,6 +560,9 @@ public class Register2 extends javax.swing.JFrame {
                 Student student = new Student(sID, sName, sCareer);
                 if(student.validateId(sID)== false){
                     student.addStudent();
+                    txt_register_studenID.setText("");
+                    txt_register_studentName.setText("");
+                    txt_register_carrer.setText("");
                     JOptionPane.showMessageDialog(this, "The registration have been a success");
                 }
                 else{
@@ -581,6 +590,10 @@ public class Register2 extends javax.swing.JFrame {
                 Materials2 materials = new Materials2(code,name,quantity,type);
                 AudioVisual audiovisual = new AudioVisual(code,name,quantity,type);
                 audiovisual.addAudio();
+                txt_register_audioCode.setText("");
+                txt_register_audioName.setText("");
+                txt_register_audioType.setText("");
+                txt_register_audioQuantity.setText("");
                 JOptionPane.showMessageDialog(this, "The registration have been a success");
             }
             else{
