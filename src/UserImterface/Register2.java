@@ -155,6 +155,11 @@ public class Register2 extends javax.swing.JFrame {
 
         btn_register_bookBack.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         btn_register_bookBack.setText("Back");
+        btn_register_bookBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_register_bookBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -553,6 +558,11 @@ public class Register2 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "The registration have been a success");
         }
     }//GEN-LAST:event_btn_register_audioRegisterActionPerformed
+
+    private void btn_register_bookBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_bookBackActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_register_bookBackActionPerformed
 
     /**
      * @param args the command line arguments

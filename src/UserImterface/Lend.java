@@ -103,6 +103,11 @@ public class Lend extends javax.swing.JFrame {
         });
 
         btn_lend_return.setText("Return");
+        btn_lend_return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_lend_returnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -193,6 +198,11 @@ public class Lend extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_lend_lendActionPerformed
+
+    private void btn_lend_returnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lend_returnActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_lend_returnActionPerformed
 
     /**
      * @param args the command line arguments
