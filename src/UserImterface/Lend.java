@@ -169,7 +169,7 @@ public class Lend extends javax.swing.JFrame {
     }//GEN-LAST:event_radio_btn_lend_audioVisualesActionPerformed
 
     private void btn_lend_lendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lend_lendActionPerformed
-        // TODO add your handling code here:
+        //Verificacion de estudiante y realizar préstamo
         String code = studentCode.getText();
         String name = nameOfLoan.getText();
         Student student = new Student("","","");

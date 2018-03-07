@@ -479,7 +479,7 @@ public class Register2 extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_register_bookQuantityActionPerformed
 
     private void btn_register_bookRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_bookRegisterActionPerformed
-        // TODO add your handling code here:
+        // registro de libros
         String code = txt_register_bookCode.getText();
         String name = txt_register_bookName.getText();
         String editorial = txt_register_bookEditorial.getText();
@@ -516,7 +516,7 @@ public class Register2 extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_register_audioTypeActionPerformed
 
     private void btn_register_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_registerActionPerformed
-        // TODO add your handling code here:
+        // registro de estudiantes
         String sID = txt_register_studenID.getText();
         String sName = txt_register_studentName.getText();
         String sCareer = txt_register_carrer.getText();
@@ -542,7 +542,7 @@ public class Register2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_register_registerActionPerformed
 
     private void btn_register_audioRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_audioRegisterActionPerformed
-        // TODO add your handling code here:
+        // registro de material audiovisual
         String code = txt_register_audioCode.getText();
         String name = txt_register_audioName.getText();
         String type = txt_register_audioType.getText();
