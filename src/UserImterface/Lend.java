@@ -201,7 +201,9 @@ public class Lend extends javax.swing.JFrame {
 
     private void btn_lend_returnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lend_returnActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+        this.dispose();
+        MainFrame mf = new MainFrame();
+        mf.setVisible(true);
     }//GEN-LAST:event_btn_lend_returnActionPerformed
 
     /**

@@ -5,6 +5,8 @@
  */
 package UserImterface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Monserrath
@@ -29,9 +31,12 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        register_bt = new javax.swing.JButton();
+        handover_bt = new javax.swing.JButton();
+        lend_bt = new javax.swing.JButton();
+        pass = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,27 +46,39 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel2.setText("Choose Wisely");
 
-        jButton1.setFont(new java.awt.Font("Maiandra GD", 1, 14)); // NOI18N
-        jButton1.setText("Register");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        register_bt.setFont(new java.awt.Font("Maiandra GD", 1, 14)); // NOI18N
+        register_bt.setText("Register");
+        register_bt.setEnabled(false);
+        register_bt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                register_btActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Maiandra GD", 1, 14)); // NOI18N
-        jButton2.setText("Handover");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        handover_bt.setFont(new java.awt.Font("Maiandra GD", 1, 14)); // NOI18N
+        handover_bt.setText("Handover");
+        handover_bt.setEnabled(false);
+        handover_bt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                handover_btActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Maiandra GD", 1, 14)); // NOI18N
-        jButton3.setText("Lend");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        lend_bt.setFont(new java.awt.Font("Maiandra GD", 1, 14)); // NOI18N
+        lend_bt.setText("Lend");
+        lend_bt.setEnabled(false);
+        lend_bt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                lend_btActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Pass:");
+
+        jButton4.setText("OK");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
             }
         });
 
@@ -70,19 +87,24 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(handover_bt, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(register_bt, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lend_bt, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -90,35 +112,61 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jButton4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(34, 34, 34)
-                .addComponent(jButton1)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(register_bt)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addComponent(handover_bt)
+                .addGap(26, 26, 26)
+                .addComponent(lend_bt)
+                .addGap(46, 46, 46))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void register_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_btActionPerformed
         // TODO add your handling code here:
         Register2 rgtW = new Register2();
         rgtW.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_register_btActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void handover_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handover_btActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        Handback back = new Handback();
+        back.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_handover_btActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void lend_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lend_btActionPerformed
         // TODO add your handling code here:
         Lend lend = new Lend();
         lend.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_lend_btActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // Verificar contraseña para acceder al sistema
+        String password = "ic.tec";
+        String pass2 = pass.getText();
+        if(password.equals(pass2)){
+            register_bt.setEnabled(true);
+            handover_bt.setEnabled(true);
+            lend_bt.setEnabled(true);
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Password is incorrect, try again!");
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,10 +204,13 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton handover_bt;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton lend_bt;
+    private javax.swing.JTextField pass;
+    private javax.swing.JButton register_bt;
     // End of variables declaration//GEN-END:variables
 }
