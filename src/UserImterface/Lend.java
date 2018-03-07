@@ -44,10 +44,8 @@ public class Lend extends javax.swing.JFrame {
         radio_btn_lend_audioVisuales = new javax.swing.JRadioButton();
         radio_btn_lend_books = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         btn_lend_lend = new javax.swing.JButton();
         btn_lend_return = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         nameOfLoan = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,13 +95,6 @@ public class Lend extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         jLabel3.setText("Search:");
 
-        jComboBox1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
         btn_lend_lend.setText("Lend");
         btn_lend_lend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,19 +104,12 @@ public class Lend extends javax.swing.JFrame {
 
         btn_lend_return.setText("Return");
 
-        jButton1.setText("Search:");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,11 +127,7 @@ public class Lend extends javax.swing.JFrame {
                             .addComponent(btn_lend_lend, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1)
-                                .addGap(27, 27, 27)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(64, 64, 64)
                                 .addComponent(nameOfLoan))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -165,13 +145,11 @@ public class Lend extends javax.swing.JFrame {
                     .addComponent(studentCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(pnl_lend_choosing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
                     .addComponent(nameOfLoan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(41, 41, 41)
                 .addComponent(btn_lend_lend)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(btn_lend_return)
@@ -184,10 +162,6 @@ public class Lend extends javax.swing.JFrame {
     private void radio_btn_lend_audioVisualesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_btn_lend_audioVisualesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radio_btn_lend_audioVisualesActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void btn_lend_lendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lend_lendActionPerformed
         // TODO add your handling code here:
@@ -219,10 +193,6 @@ public class Lend extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_lend_lendActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,8 +232,6 @@ public class Lend extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_lend_lend;
     private javax.swing.JButton btn_lend_return;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
