@@ -24,15 +24,8 @@ public class Handback extends javax.swing.JFrame {
     
     public ArrayList handBack(String idS){
         ArrayList fillComboB = new ArrayList();
-        if(MaterialsLoan.containsKey(idS)){
-        ArrayList temp  = new ArrayList();
-        ArrayList temp2  = new ArrayList();
-        temp = (ArrayList)MaterialsLoan.get(idS);
-            for(int i = 0; i > temp.size(); i ++){
-                temp2 =  (ArrayList) temp.get(i);
-                fillComboB = (ArrayList) temp2.get(0);
-            }
-        }
+        fillComboB = MaterialsLoan.get(idS);
+        System.out.println(fillComboB.get(0));
         return fillComboB;
     }
     
@@ -201,7 +194,6 @@ public class Handback extends javax.swing.JFrame {
         if(checkExistance(idS) == true){
             ArrayList populate = new ArrayList();
             populate = handBack(idS);
-            System.out.println(populate.size());
             for (int i = 0; i > populate.size(); i++ ){
                 jComboBox1.addItem("Holi");
             }

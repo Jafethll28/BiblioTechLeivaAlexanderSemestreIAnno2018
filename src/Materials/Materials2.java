@@ -81,7 +81,7 @@ public class Materials2 {
     //creación de Mapa de Hash y Array para almacenar datos
     static Map<String,ArrayList> Materials = new HashMap();
     static ArrayList<String> materialsOnLoan = new ArrayList<>();
-    public static Map MaterialsLoan = new HashMap();
+    public static Map<String,ArrayList> MaterialsLoan = new HashMap();
     
     public void addMaterials(){
         //método registrar materiales
