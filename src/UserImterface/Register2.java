@@ -41,6 +41,7 @@ public class Register2 extends javax.swing.JFrame {
             return false;
         }
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -164,6 +165,11 @@ public class Register2 extends javax.swing.JFrame {
 
         btn_register_bookBack.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         btn_register_bookBack.setText("Back");
+        btn_register_bookBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_register_bookBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -275,6 +281,11 @@ public class Register2 extends javax.swing.JFrame {
 
         btn_register_audioBack.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         btn_register_audioBack.setText("Back");
+        btn_register_audioBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_register_audioBackActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         jLabel8.setText("Code:");
@@ -395,6 +406,11 @@ public class Register2 extends javax.swing.JFrame {
 
         btn_register_back.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         btn_register_back.setText("Back");
+        btn_register_back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_register_backActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -572,6 +588,26 @@ public class Register2 extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_register_audioRegisterActionPerformed
+
+    private void btn_register_bookBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_bookBackActionPerformed
+        // TODO add your handling code here:
+        MainFrame mf = new MainFrame();
+        this.dispose();
+    }//GEN-LAST:event_btn_register_bookBackActionPerformed
+
+    private void btn_register_audioBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_audioBackActionPerformed
+        // TODO add your handling code here:
+        MainFrame mf = new MainFrame();
+        mf.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_register_audioBackActionPerformed
+
+    private void btn_register_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_register_backActionPerformed
+        // TODO add your handling code here:
+        MainFrame mf = new MainFrame();
+        mf.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_register_backActionPerformed
 
     /**
      * @param args the command line arguments

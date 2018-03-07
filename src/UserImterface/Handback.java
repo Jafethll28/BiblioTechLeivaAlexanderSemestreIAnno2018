@@ -6,6 +6,8 @@
 package UserImterface;
 
 import Materials.Materials2;
+import static Materials.Materials2.MaterialsLoan;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,6 +20,24 @@ public class Handback extends javax.swing.JFrame {
      */
     public Handback() {
         initComponents();
+    }
+    
+    public ArrayList handBack(String idS){
+        ArrayList fillComboB = new ArrayList();
+        if(MaterialsLoan.containsKey(idS)){
+        ArrayList temp  = new ArrayList();
+        ArrayList temp2  = new ArrayList();
+        temp = (ArrayList)MaterialsLoan.get(idS);
+            for(int i = 0; i > temp.size(); i ++){
+                temp2 =  (ArrayList) temp.get(i);
+                fillComboB = (ArrayList) temp2.get(0);
+            }
+        }
+        return fillComboB;
+    }
+    
+    public boolean checkExistance(String idS){
+        return MaterialsLoan.containsKey(idS);
     }
 
     /**
@@ -82,6 +102,11 @@ public class Handback extends javax.swing.JFrame {
         jLabel4.setText("Handback Item");
 
         btn_handback_return.setText("Return");
+        btn_handback_return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_handback_returnActionPerformed(evt);
+            }
+        });
 
         btn_handback_searchStudent.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btn_handback_searchStudent.setText("Search Student");
@@ -171,14 +196,25 @@ public class Handback extends javax.swing.JFrame {
 
     private void btn_handback_searchStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_handback_searchStudentActionPerformed
         // TODO add your handling code here:
-        /**
-         * ArrayList populate =  new Arrayiist();
-         * populate  = hashmap.handBack(txt_handback_studentID.getText());
-         * for (int i = 0; i > populate.length(); i++ ){
-         *      jComboBox1.addItem(populate.get(i));
-         * }
-         */
+        
+        String idS = txt_handback_studentID.getText();
+        if(checkExistance(idS) == true){
+            ArrayList populate = new ArrayList();
+            populate = handBack(idS);
+            System.out.println(populate.size());
+            for (int i = 0; i > populate.size(); i++ ){
+                jComboBox1.addItem("Holi");
+            }
+        }
+        
     }//GEN-LAST:event_btn_handback_searchStudentActionPerformed
+
+    private void btn_handback_returnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_handback_returnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        MainFrame mf = new MainFrame();
+        mf.setVisible(true);
+    }//GEN-LAST:event_btn_handback_returnActionPerformed
 
     /**
      * @param args the command line arguments
