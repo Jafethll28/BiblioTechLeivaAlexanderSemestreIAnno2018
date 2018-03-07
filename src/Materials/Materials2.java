@@ -102,15 +102,6 @@ public class Materials2 {
     }
     
     
-    
-    public void loan(){
-        /*String x = "hola";
-        Student student = new Student();
-        if(student.validateId(x)==true){
-            
-        }*/  
-    }
-    
     public void printear(){
         System.out.println(name + materialsId);
     }
