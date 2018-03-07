@@ -32,6 +32,15 @@ public class Register2 extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    protected boolean checkIDE (String iD){
+        if(iD.length() >= 5){
+             return true;
+        }
+        else{
+            return false;
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -486,11 +495,16 @@ public class Register2 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "One of the fields is empty, fill it to procced");
         }  
         else{
-            Materials2 materials = new Materials2(code,name,quantity,kind);
-            Book book = new Book(editorial,autor,code,name,quantity,kind);
-            book.addBook();
-            materials.printear();
-            JOptionPane.showMessageDialog(this, "The registration have been a success");
+            if(checkIDE(code) == true){
+                Materials2 materials = new Materials2(code,name,quantity,kind);
+                Book book = new Book(editorial,autor,code,name,quantity,kind);
+                book.addBook();
+                materials.printear();
+                JOptionPane.showMessageDialog(this, "The registration have been a success");
+                }
+            else{
+                JOptionPane.showMessageDialog(this, "The code length if wrong, please fix it");
+            }
         }
     }//GEN-LAST:event_btn_register_bookRegisterActionPerformed
 
@@ -547,10 +561,15 @@ public class Register2 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "One of the fields is empty, fill it to procced");
         }
         else{
-            Materials2 materials = new Materials2(code,name,quantity,type);
-            AudioVisual audiovisual = new AudioVisual(code,name,quantity,type);
-            audiovisual.addAudio();
-            JOptionPane.showMessageDialog(this, "The registration have been a success");
+            if (checkIDE(code) == true){
+                Materials2 materials = new Materials2(code,name,quantity,type);
+                AudioVisual audiovisual = new AudioVisual(code,name,quantity,type);
+                audiovisual.addAudio();
+                JOptionPane.showMessageDialog(this, "The registration have been a success");
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "The code length if wrong, please fix it");
+            }
         }
     }//GEN-LAST:event_btn_register_audioRegisterActionPerformed
 
